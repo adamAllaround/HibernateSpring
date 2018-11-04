@@ -25,7 +25,7 @@ public class ApplicationManagedCarDaoImplTest {
     }
 
     @Test
-    public void whenPersist_ThenReachOutToDb() {
+    public void whenPersist_thenNoExceptionIsThrown() {
         Car car = new Car();
         car.setMake("Mini");
         car.setModel("Cooper S");
@@ -35,31 +35,22 @@ public class ApplicationManagedCarDaoImplTest {
     }
 
     @Test
-    public void whenPersist_thenFetchFromDb() {
+    public void whenEntityIsPersisted_thenItsRetrievedFromDb() {
         Car car = new Car();
-        car.setMake("Mini");
-        car.setModel("Cooper S");
+        car.setMake("Subaru");
+        car.setModel("Impreza");
         car.setManufacturedAt(LocalDate.now());
 
         carDao.persist(car);
 
         Optional<Car> carFetched = carDao.getById(car.getId());
         Assert.assertTrue(carFetched.isPresent());
-
     }
 
     @Test
-    public void whenFetchwrongObjectThenFail() {
-        Car car = new Car();
-        car.setMake("Mini");
-        car.setModel("Cooper S");
-        car.setManufacturedAt(LocalDate.now());
-
-        carDao.persist(car);
-
+    public void whenRecordNotExists_thenGetByIdReturnsEmptyOptional() {
         Optional<Car> carFetched = carDao.getById(789L);
         Assert.assertFalse(carFetched.isPresent());
-
     }
 
 }
