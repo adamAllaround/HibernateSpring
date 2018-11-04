@@ -4,7 +4,7 @@ import com.allaroundjava.model.Car;
 
 import java.util.Optional;
 
-interface CarDao {
+public interface CarDao {
     Optional<Car> getById(Long id);
 
     Long persist(Car c);
