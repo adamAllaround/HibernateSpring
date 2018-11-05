@@ -1,7 +1,7 @@
 # Configuring Hibernate with Spring
 
 This application shows how to configure Hibernate with Spring.
-You can read a full description of the process in the [following article] (https://allaroundjava.com)
+You can read a full description of the process in the [following article](https://allaroundjava.com)
 
 ## Project Structure
 Project consists of four modules:
@@ -17,6 +17,8 @@ Top level HibernateSpring module's .pom file contains all the relevant dependenc
 ## Running the application
 Clone the application with git and run
 ```mvn install```
+
+This will run the unit tests which are contained in ApplicationManaged and ContainerManaged modules.
 
 ## Database
 This application uses an in-memory database - H2. In order to run the tests you don't need to install a database of your own.
