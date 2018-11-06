@@ -22,14 +22,14 @@ import java.util.Properties;
 public class AppConfig {
 
     @Bean
-    EntityManagerFactory entityManagerFactory() {
+    LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean emf = new LocalContainerEntityManagerFactoryBean();
         emf.setPackagesToScan("com.allaroundjava.model");
         emf.setDataSource(createDataSource());
         emf.setJpaVendorAdapter(createJpaVendorAdapter());
         emf.setJpaProperties(createHibernateProperties());
         emf.afterPropertiesSet();
-        return emf.getNativeEntityManagerFactory();
+        return emf;
     }
 
     private DataSource createDataSource() {
@@ -50,7 +50,7 @@ public class AppConfig {
     }
 
     @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
+    PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
 }
