@@ -18,7 +18,7 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"com.allaroundjava.dao", "com.allaroundjava.container.dao"})
+@ComponentScan(basePackages = {"com.allaroundjava.container.dao"})
 public class AppConfig {
 
     @Bean
