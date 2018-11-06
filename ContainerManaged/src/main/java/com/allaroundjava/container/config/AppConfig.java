@@ -50,7 +50,7 @@ public class AppConfig {
     }
 
     @Bean
-    public PlatformTransactionManager platformTransactionManager(EntityManagerFactory emf) {
+    public PlatformTransactionManager transactionManager(EntityManagerFactory emf) {
         return new JpaTransactionManager(emf);
     }
 }
