@@ -1,7 +1,7 @@
 # Configuring Hibernate with Spring
 
 This application shows how to configure Hibernate with Spring.
-You can read a full description of the process in the [following article](https://allaroundjava.com)
+You can read a full description of the process in the [following article](https://allaroundjava.com/hibernate-jpa-spring-tutorial/)
 
 ## Project Structure
 Project consists of four modules:
